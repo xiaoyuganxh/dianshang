@@ -16,4 +16,9 @@ public class UserInfoServiceImpl implements UserInfoService {
     public List<UserInfo> findAllUser() {
         return userInfoMapper.selectAll();
     }
+
+    @Override
+    public UserInfo findUserByPrimaryKey(UserInfo userInfo) {
+        return this.userInfoMapper.selectByPrimaryKey(userInfo);
+    }
 }

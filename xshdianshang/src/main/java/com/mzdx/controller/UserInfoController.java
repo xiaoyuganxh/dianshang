@@ -18,4 +18,10 @@ public class UserInfoController {
     public List<UserInfo> findAllUser(){
         return userInfoService.findAllUser();
     }
+    @RequestMapping("getUserByPrimaryKey")
+    public UserInfo getUserByPrimaryKey(String uid){
+        UserInfo userInfo=new UserInfo();
+        userInfo.setId(uid);
+       return this.userInfoService.findUserByPrimaryKey(userInfo);
+    }
 }
